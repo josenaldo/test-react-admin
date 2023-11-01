@@ -5,8 +5,9 @@ import {
   // ShowGuesser,
 } from 'react-admin'
 
-import { dataProvider } from '@/dataProvider'
 import { UserList } from '@/features/users'
+
+import { dataProvider } from '@/dataProvider'
 
 export const App = () => (
   <Admin dataProvider={dataProvider}>
