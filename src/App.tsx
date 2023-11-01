@@ -1,10 +1,10 @@
 import {
   Admin,
-  Resource,
-  // ListGuesser,
+  Resource, // ListGuesser,
   // EditGuesser,
   // ShowGuesser,
 } from 'react-admin'
+
 import { dataProvider } from '@/dataProvider'
 import { UserList } from '@/features/users'
 
