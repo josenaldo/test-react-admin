@@ -3,6 +3,7 @@ import { Admin, Resource } from 'react-admin'
 import PostIcon from '@mui/icons-material/Book'
 import UserIcon from '@mui/icons-material/Group'
 
+import { authProvider } from '@/features/auth'
 import { Dashboard } from '@/features/dashboard'
 import { PostCreate, PostEdit, PostList } from '@/features/posts'
 import { UserList, UserShow } from '@/features/users'
@@ -10,7 +11,11 @@ import { UserList, UserShow } from '@/features/users'
 import { dataProvider } from '@/dataProvider'
 
 export const App = () => (
-  <Admin dataProvider={dataProvider} dashboard={Dashboard}>
+  <Admin
+    authProvider={authProvider}
+    dataProvider={dataProvider}
+    dashboard={Dashboard}
+  >
     <Resource
       name="posts"
       create={PostCreate}
