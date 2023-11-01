@@ -11,7 +11,7 @@ export default function PostList(props) {
     <List>
       <Datagrid rowClick="edit">
         <TextField source="id" sx={{ fontWeight: 'bold' }} />
-        <ReferenceField source="userId" reference="users" />
+        <ReferenceField source="userId" reference="users" link="show" />
         <TextField source="title" />
         <EditButton />
       </Datagrid>
