@@ -1,8 +1,14 @@
-import { Edit, ReferenceInput, SimpleForm, TextInput } from 'react-admin'
+import {
+  Edit,
+  ReferenceInput,
+  SimpleForm,
+  TextInput,
+  useRecordContext,
+} from 'react-admin'
 
 export default function PostEdit(props) {
   return (
-    <Edit>
+    <Edit title={<PostTitle />}>
       <SimpleForm>
         <TextInput source="id" InputProps={{ disabled: true }} />
         <ReferenceInput source="userId" reference="users" link="show" />
@@ -11,4 +17,10 @@ export default function PostEdit(props) {
       </SimpleForm>
     </Edit>
   )
+}
+
+function PostTitle() {
+  const record = useRecordContext()
+
+  return <span>{record ? `Post #${record.id} - ${record.title}` : ''}</span>
 }
