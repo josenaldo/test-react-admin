@@ -1,0 +1,8 @@
+import { useRecordContext } from 'react-admin'
+
+export default function MyUrlField({ source }: { source: string }) {
+  const record = useRecordContext()
+  if (!record) return null
+
+  return <a href={record[source]}>{record[source]}</a>
+}
